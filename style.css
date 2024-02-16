@@ -1,0 +1,758 @@
+
+:root{
+    --text: white;
+    --background: #071630;
+    --highlight: #ff7400;
+    --buttontext: white;
+    --secondary: #172845;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+   }
+    to {
+        opacity: 1;
+   }
+}
+
+.fade-in-active {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--background);
+}
+
+.logo {
+    font-family: 'Anton';
+}
+
+/* Top Header Styles with Animation */
+.top-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--highlight);
+    font-family: sans-serif;
+    color: var(--buttontext);
+    text-align: center;
+    padding: 3px 0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
+}
+.top-header .call-link {
+    color: var(--buttontext);
+   /* White text for the link */
+    text-decoration: underline;
+   /* Underline for emphasis */
+    transition: color 0.3s ease;
+   /* Transition for hover effect */
+}
+.top-header .call-link:hover {
+    color: #cccccc;
+   /* Lighter color on hover */
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+       /* Adjusted for smaller screens */
+        margin-bottom: 0.5rem;
+   }
+    nav ul li {
+        margin: 0 10px;
+       /* Reduced margin between nav items */
+   }
+    nav ul li a {
+        padding: 0.25rem 0.5rem;
+       /* Smaller padding for nav links */
+   }
+}
+
+/* Navigation */
+nav {
+    background: transparent;
+   /* Ensures the nav is transparent */
+    display: flex;
+   /* Aligns logo and nav items inline */
+    justify-content: space-between;
+   /* Puts space between the logo and nav items */
+    padding: 1rem 2rem;
+   /* Adjusts padding to desired spacing */
+    align-items: center;
+   /* Centers items vertically */
+}
+.logo {
+    font-size: 2rem;
+    color: var(--text);
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 1rem;
+   /* Adjusts padding to the left of the logo */
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   /* Removes default padding */
+    display: flex;
+   /* Aligns nav items inline */
+}
+nav ul li {
+    margin: 0 20px;
+   /* Adjust spacing between nav items */
+}
+nav ul li a {
+    text-decoration: none;
+    color: var(--text);
+   /* Gray color for nav items */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+   /* Adjust padding to match header buttons */
+    transition: color 0.3s ease;
+   /* Transition for hover effect */
+    display: inline-block;
+   /* Change display to inline-block for transform */
+    transform: scale(1);
+   /* Set initial scale */
+    transition: transform 0.3s ease, color 0.3s ease;
+   /* Transition for scale and color */
+}
+nav ul li a:active {
+    transform: scale(0.95);
+   /* Scale down button when active (clicked) */
+}
+/* Style for smooth scrolling to sections */
+html {
+    scroll-behavior: smooth;
+}
+nav ul li a:hover {
+    color: var(--accent);
+   /* Blue color on hover */
+}
+
+ul li a{
+    font-family: sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--background); /* Ensure the background color is consistent with other sections */
+    background-image: url('../images/1.svg'); /* Retain the background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-size: 4rem;
+    font-family: 'Roboto';
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-bottom: 2rem;
+}
+
+.hero-highlight {
+    color: var(--highlight);
+}
+
+.hero-c {
+    text-decoration: none;
+    font-family: 'Roboto';
+    background: var(--highlight);
+    color: var(--buttontext);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   /* Add transition for smooth effect */
+    display: inline-block;
+   /* Necessary for transform to work */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   /* Initial box shadow */
+   text-align: center;
+   background-position: center;
+}
+.hero-c:hover {
+    transform: translateY(-5px);
+   /* Shifts the button up */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+   /* Slightly larger shadow on hover for depth */
+}
+
+.services {
+    padding: 4rem 0;
+    text-align: center;
+    background: var(--background);
+}
+.services-header {
+    margin-bottom: 2rem;
+}
+
+.services-title {
+    font-family: 'Roboto';
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+   /* Center the container */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background: var(--secondary);
+    color: var(--buttontext);
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    width: calc(90% - 2rem);
+   /* Adjust width to fit 2 items per row */
+    transition: all 0.3s ease;
+}
+
+.service-item-title{
+    text-align: left;
+    font-family: 'Roboto';
+    font-size: 2rem;
+    color: var(--highlight);
+}
+.service-item-content{
+    text-align: left;
+    font-family: 'Roboto';
+    font-size: 1rem;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+       /* Adds padding on the sides */
+   }
+    .service-item {
+        width: 100%;
+       /* Full width for each service item */
+        margin: 10px 0;
+       /* Adds margin between items */
+   }
+    .services-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        color: var(--text);
+   }
+}
+
+/* Workflow Section */
+.workflow {
+    background: var(--background);
+    padding: 4rem 0;
+   /* Increased padding for more space */
+}
+.workflow-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.workflow-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text);
+    padding: 2rem;
+   /* Existing padding */
+    /* border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text);
+    margin: 0 20px;
+   Add a margin to ensure text doesn't touch the edges */
+}
+.workflow-text h3 {
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    margin-bottom: 1rem;
+   /* Adjusted margin for consistency */
+}
+.workflow-text h1{
+    font-family: 'Roboto';
+    font-size: 2.5rem;
+}
+.workflow-highlight{
+    color: var(--highlight);
+}
+.unoffered-services {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+}
+  
+.unoffered-services ul {
+    list-style-type: none;
+}
+  
+.unoffered-services li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.unoffered-services li img {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    margin-right: 10px;
+}
+  
+.unoffered-services li span {
+    font-size: 1.5rem; /* Adjust as needed */
+    font-family: 'Roboto';
+}
+
+.workflow-graphic {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the graph horizontally */
+    align-items: center; /* Center the graph vertically */
+    border-radius: 20px;
+    overflow: hidden;
+    /* Maintain the original style */
+}
+
+.workflow-graphic .flourish-embed {
+    width: 100%; /* Ensure the graph takes up the full width */
+}
+.workflow-graphic img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+   /* Maintain the border-radius */
+}
+@media (max-width: 768px) {
+    .workflow-content {
+        flex-direction: column;
+       /* Stacks the text and graphic on top of each other */
+   }
+    .workflow-text, .workflow-graphic {
+        padding: 1rem;
+       /* Adjust padding for mobile view */
+        margin-bottom: 1rem;
+       /* Space between text and graphic */
+   }
+    .workflow-graphic img {
+        width: auto;
+       /* Allows the image to shrink to fit the container */
+        max-width: 100%;
+       /* Prevents the image from overflowing its container */
+   }
+}
+
+.whole-workflow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Align text center */
+}
+
+.workflow-scheldue-call {
+    text-decoration: none;
+    font-family: 'Roboto';
+    background: var(--highlight);
+    color: var(--buttontext);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.workflow-scheldue-call:hover {
+    transform: translateY(-5px);
+   /* Shifts the button up */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+   /* Slightly larger shadow on hover for depth */
+}
+
+.workflow-text h1, h3 {
+    text-align: left;
+}
+
+/* Get Started Section Styles */
+.get-started {
+    display: flex;
+    flex-direction: column;
+   /* Stack items vertically */
+    align-items: center;
+   /* Center items horizontally */
+    padding: 4rem 2rem;
+   /* Add padding on top/bottom and left/right */
+    background-color: transparent;
+}
+.get-started h2 {
+    margin-bottom: 2rem;
+   /* Space below the title */
+    font-family: 'Roboto';
+    color: var(--text);
+}
+.get-started-step {
+    background-color: var(--secondary); /* Adjust transparency as needed */
+    font-family: 'Roboto';
+   /* Light gray background like FAQ answers */
+    color: var(--buttontext);
+   /* Dark text for contrast, similar to FAQ questions */
+    padding: 1rem;
+   /* Padding inside each step */
+    border-radius: 15px;
+   /* Rounded corners for each widget */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   /* Shadow for depth */
+    width: 90%;
+   /* Width relative to its container */
+    margin-bottom: 2rem;
+   /* Margin between steps */
+    transition: all 0.3s ease-in-out;
+   /* Animation for hover effect */
+   /* Border color for definition */
+}
+.get-started-step:hover {
+    transform: scale(1.02);
+   /* Slightly scale up the widget on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   /* Larger shadow on hover */
+}
+/* Style adjustments for the step numbers and descriptions */
+.get-started-step h3 {
+    font-size: 1.2rem;
+   /* Slightly larger font size for headings */
+    font-weight: bold;
+   /* Bold font weight for headings */
+   /* Dark text for contrast on white background */
+    margin-bottom: 0.5rem;
+   /* Space below the heading */
+}
+.step-number {
+    color: var(--highlight);
+}
+.get-started-step p {
+    font-size: 1rem;
+   /* Standard font size for paragraphs */
+   /* Lighter text for the description */
+    line-height: 1.5;
+   /* Line height for better readability */
+}
+@media (max-width: 768px) {
+    .get-started {
+        padding: 4rem 1rem;
+       /* Reduce padding on smaller screens */
+   }
+    .get-started-step {
+        width: 100%;
+       /* Full width on smaller screens */
+   }
+    .get-started h2 {
+        text-align: center;
+       /* Center the title on smaller screens */
+   }
+}
+.get-started-paragraph {
+    font-family: 'Roboto';
+    color: var(--text);
+    text-align: center;
+}
+.get-started-scheldue-call {
+    text-decoration: none;
+    font-family: 'Roboto';
+    background: var(--highlight);
+    color: var(--buttontext);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.get-started-scheldue-call:hover {
+    transform: translateY(-5px);
+   /* Shifts the button up */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+   /* Slightly larger shadow on hover for depth */
+}
+
+.calendly-widget-container {
+    max-width: 768px;
+    margin: auto;
+    background-color: #f6f6f7;
+   /* Ensure the container for the Calendly widget also has a white background */
+    padding: 1rem;
+   /* Uniform padding all around */
+    border-radius: 15px;
+   /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   /* Subtle shadow for depth */
+    border: 1px solid #ddd;
+   /* Uniform border */
+}
+/* Ensure the iframe inside the container has no additional bottom margin */
+.calendly-widget-container iframe {
+    display: block;
+    width: 650px;
+    border: none;
+    margin-bottom: -1px;
+   /* Remove any unwanted space below the iframe */
+}
+.scheldue-call-description {
+    font-family: 'Roboto';
+    text-align: left;
+    color: var(--text);
+    margin-left: 40px;
+}
+.scheldue-call-description h1 {
+    font-size: 3rem;
+    color: var(--highlight);
+    line-height: 1;
+}
+.scheldue-call h3 {
+    font-size: 1rem;
+}
+.scheldue-call-content {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.scheldue-ticks {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+}
+  
+.scheldue-ticks ul {
+    list-style-type: none;
+}
+  
+.scheldue-ticks li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.scheldue-ticks li img {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    margin-right: 10px;
+}
+  
+.scheldue-ticks li span {
+    font-size: 1rem; /* Adjust as needed */
+    font-family: 'Roboto';
+}
+.scheldue-call-highlight {
+    color: var(--highlight);
+}
+.scheldue-call-cross-list-text {
+    font-size: 1rem;
+}
+
+.top-scheldue-title {
+    font-family: 'Roboto';
+    color: var(--text);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: var(--text);
+    padding: 2rem 0;
+    text-align: center;
+}
+footer p {
+    font-family: 'Roboto';
+    font-size: 0.8rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .service-item, .workflow-content, .get-started-step {
+        width: 100%;
+        margin: 0 0 1rem 0;
+   }
+    .workflow-text, .workflow-graphic, .get-started-step {
+        padding: 0;
+   }
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1rem;
+    }
+   /* Prevent horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+   }
+   /* Make the top header less thick */
+    .top-header {
+        font-size: 0.78rem;
+       /* Smaller font size for the top header */
+        padding: 0.5rem;
+       /* Less padding to decrease the height */
+   }
+   /* Adjust the navigation links to be visible and correctly positioned */
+    nav {
+        padding: 0;
+       /* Remove padding on the sides */
+        position: relative;
+       /* Needed for absolute positioning of the menu */
+   }
+   /* Hamburger Menu Icon for mobile view */
+    .hamburger {
+        flex-direction: column;
+        cursor: pointer;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 7;
+   }
+   /* Adjust the hamburger menu position to align with the Botblend logo and be below the top header */
+    .hamburger {
+        position: absolute;
+       /* Changes position from fixed to absolute within the parent container */
+        top: 1.7rem;
+       /* Adjust this value to align with the vertical center of your logo */
+        right: 1rem;
+       /* Maintain consistent spacing from the right edge */
+        transform: none;
+       /* Remove any previous transform that could affect positioning */
+   }
+   /* Since the hamburger is positioned absolutely, ensure it is within a relatively positioned container */
+    header {
+        position: relative;
+       /* Add this to your header or surrounding container of the hamburger menu if not already present */
+   }
+    .hamburger .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+       /* Set to white to match other text color */
+        margin: 6px 0;
+        transition: 0.4s;
+   }
+    nav ul {
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        text-align: left;
+   }
+    nav ul li {
+        display: block;
+       /* Stack the list items */
+        margin: 0;
+       /* Reset margins */
+   }
+    nav ul li a {
+        display: block;
+       /* Make the links take up the full list item */
+        font-size: 1rem;
+       /* Increase font size for readability */
+        padding: 1rem;
+       /* More padding for tap targets */
+        color: #333;
+        border-bottom: 1px solid #ddd;
+       /* Separator for the links */
+        background: none;
+       /* Clear any background styles */
+   }
+   /* When nav-open is added, the menu becomes visible */
+    .nav-open {
+        transform: translateX(0);
+   }
+   /* Adjust the size of the heading in the hero section */
+    .hero h1 {
+        font-size: 2rem;
+       /* Smaller font size for hero heading */
+   }
+   /* Adjust workflow section for consistent edge distance */
+    .workflow {
+        padding: 2rem 1rem;
+       /* Add padding on the sides */
+   }
+    .workflow-content {
+        flex-direction: column;
+       /* Stack the text and the graphic on top of each other */
+   }
+    .workflow-text {
+        padding: 1rem;
+       /* Add padding around the text */
+        text-align: center;
+       /* Center the text for mobile */
+   }
+    .workflow-graphic {
+        margin-bottom: 1rem;
+       /* Add space between the graphic and the text */
+   }
+   /* Adjust the services section for consistent edge distance */
+    .services {
+        padding: 2rem 1rem;
+       /* Add padding to match the workflow section */
+   }
+   /* Ensure that service items do not have a fixed width */
+    .service-item {
+        width: 100%;
+       /* Full width for service items */
+        padding: 1rem;
+       /* Add padding inside service items */
+   }
+   /* Adjust 'How to Get Started' section padding */
+    .get-started-step {
+        padding: 1.5rem;
+       /* Increase padding to prevent text touching the edges */
+   }
+}
