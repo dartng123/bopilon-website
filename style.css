@@ -756,3 +756,23 @@ footer p {
        /* Increase padding to prevent text touching the edges */
    }
 }
+
+@media (max-width: 768px) {
+    .scheldue-call-content {
+        flex-direction: column;
+       /* Stacks the text and graphic on top of each other */
+   }
+    .scheldue-call-description, .calendly-widget-container {
+        padding: 1rem;
+       /* Adjust padding for mobile view */
+        margin-bottom: 1rem;
+       /* Space between text and graphic */
+   }
+    .calendly-widget-container {
+        order: 2;
+        width: auto;
+       /* Allows the image to shrink to fit the container */
+        max-width: 100%;
+       /* Prevents the image from overflowing its container */
+   }
+}
