@@ -337,6 +337,12 @@ ul li a{
     font-family: 'Roboto';
 }
 
+@media (max-width: 768px) {
+    .unoffered-services li span {
+        font-size: 1rem; /* Adjust as needed */
+    }
+}
+
 .workflow-graphic {
     flex: 1;
     display: flex;
