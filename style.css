@@ -339,7 +339,7 @@ ul li a{
 
 @media (max-width: 768px) {
     .unoffered-services li span {
-        font-size: 1rem; /* Adjust as needed */
+        font-size: 1.2rem; /* Adjust as needed */
     }
 }
 
