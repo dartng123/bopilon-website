@@ -38,7 +38,7 @@ function initFlourishChart() {
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        workflowGraphic.innerHTML = '<div class="flourish-embed flourish-chart" data-src="visualisation/16524096"></div>';
+        workflowGraphic.innerHTML = '<div class="flourish-embed flourish-chart" data-src="visualisation/16769994"></div>';
         const script = document.createElement('script');
         script.src = 'https://public.flourish.studio/resources/embed.js';
         script.onload = hideFlourishBranding;
