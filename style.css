@@ -323,7 +323,6 @@ ul li a{
   
 .unoffered-services li {
     display: flex;
-    align-items: center;
     margin-bottom: 10px;
 }
   
