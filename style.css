@@ -636,140 +636,6 @@ footer p {
         padding: 0;
    }
 }
-@media (max-width: 768px) {
-    .logo {
-        font-size: 1rem;
-    }
-   /* Prevent horizontal scrolling */
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-   }
-   /* Make the top header less thick */
-    .top-header {
-        font-size: 0.78rem;
-       /* Smaller font size for the top header */
-        padding: 0.5rem;
-       /* Less padding to decrease the height */
-   }
-   /* Adjust the navigation links to be visible and correctly positioned */
-    nav {
-        padding: 0;
-       /* Remove padding on the sides */
-        position: relative;
-       /* Needed for absolute positioning of the menu */
-   }
-   /* Hamburger Menu Icon for mobile view */
-    .hamburger {
-        flex-direction: column;
-        cursor: pointer;
-        padding: 1rem;
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 7;
-   }
-   /* Adjust the hamburger menu position to align with the Botblend logo and be below the top header */
-    .hamburger {
-        position: absolute;
-       /* Changes position from fixed to absolute within the parent container */
-        top: 1.7rem;
-       /* Adjust this value to align with the vertical center of your logo */
-        right: 1rem;
-       /* Maintain consistent spacing from the right edge */
-        transform: none;
-       /* Remove any previous transform that could affect positioning */
-   }
-   /* Since the hamburger is positioned absolutely, ensure it is within a relatively positioned container */
-    header {
-        position: relative;
-       /* Add this to your header or surrounding container of the hamburger menu if not already present */
-   }
-    .hamburger .bar {
-        display: block;
-        width: 30px;
-        height: 3px;
-        background-color: #333;
-       /* Set to white to match other text color */
-        margin: 6px 0;
-        transition: 0.4s;
-   }
-    nav ul {
-        flex-direction: column;
-        background-color: #fff;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        text-align: left;
-   }
-    nav ul li {
-        display: block;
-       /* Stack the list items */
-        margin: 0;
-       /* Reset margins */
-   }
-    nav ul li a {
-        display: block;
-       /* Make the links take up the full list item */
-        font-size: 1rem;
-       /* Increase font size for readability */
-        padding: 1rem;
-       /* More padding for tap targets */
-        color: #333;
-        border-bottom: 1px solid #ddd;
-       /* Separator for the links */
-        background: none;
-       /* Clear any background styles */
-   }
-   /* When nav-open is added, the menu becomes visible */
-    .nav-open {
-        transform: translateX(0);
-   }
-   /* Adjust the size of the heading in the hero section */
-    .hero h1 {
-        font-size: 2rem;
-       /* Smaller font size for hero heading */
-   }
-   /* Adjust workflow section for consistent edge distance */
-    .workflow {
-        padding: 2rem 1rem;
-       /* Add padding on the sides */
-   }
-    .workflow-content {
-        flex-direction: column;
-       /* Stack the text and the graphic on top of each other */
-   }
-    .workflow-text {
-        padding: 1rem;
-       /* Add padding around the text */
-        text-align: center;
-       /* Center the text for mobile */
-   }
-    .workflow-graphic {
-        margin-bottom: 1rem;
-       /* Add space between the graphic and the text */
-   }
-   /* Adjust the services section for consistent edge distance */
-    .services {
-        padding: 2rem 1rem;
-       /* Add padding to match the workflow section */
-   }
-   /* Ensure that service items do not have a fixed width */
-    .service-item {
-        width: 100%;
-       /* Full width for service items */
-        padding: 1rem;
-       /* Add padding inside service items */
-   }
-   /* Adjust 'How to Get Started' section padding */
-    .get-started-step {
-        padding: 1.5rem;
-       /* Increase padding to prevent text touching the edges */
-   }
-}
 
 @media (max-width: 768px) {
     .scheldue-call-content {
@@ -928,6 +794,12 @@ footer p {
        /* Full width for service items */
         padding: 1rem;
        /* Add padding inside service items */
+   }
+   .service-item-title{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1;
    }
    /* Adjust 'How to Get Started' section padding */
     .get-started-step {
